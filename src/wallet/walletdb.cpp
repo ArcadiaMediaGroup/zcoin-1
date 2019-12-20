@@ -1432,6 +1432,11 @@ bool CWalletDB::loadPCodeNotificationTransactions(std::vector<std::string>& vPCo
     return true;
 }
 
+bool CWalletDB::WriteMnemonic(const MnemonicContainer& mnContainer) {
+    nWalletDBUpdated++;
+    return Write(std::string("mnemonic"), mnContainer);
+}
+
 bool CWalletDB::ReadMintCount(int32_t& nCount)
 {
     return Read(string("dzc"), nCount);
