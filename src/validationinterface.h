@@ -51,6 +51,7 @@ protected:
     virtual void NotifyAPIStatus() {}
     virtual void NotifyZnodeList() {}
     virtual void UpdatedBalance() {}
+    virtual void UpdatedAddress(std::string label, std::string address, bool isDelete) {}
     friend void ::RegisterValidationInterface(CValidationInterface*);
     friend void ::UnregisterValidationInterface(CValidationInterface*);
     friend void ::UnregisterAllValidationInterfaces();
@@ -93,6 +94,8 @@ struct CMainSignals {
     boost::signals2::signal<void ()> NotifyZnodeList;
     /** Notifies listeners of balance */
     boost::signals2::signal<void ()> UpdatedBalance;
+    /** Notifiers listeners of address book */
+    boost::signals2::signal<void (std::string, std::string, bool)> UpdatedAddress;
 };
 
 CMainSignals& GetMainSignals();

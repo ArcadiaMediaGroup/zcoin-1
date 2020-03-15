@@ -949,6 +949,9 @@ UniValue verifyMnemonicValidity(Type type, const UniValue& data, const UniValue&
     return ret;
 }
 
+UniValue updatedAddress(Type type, const UniValue& data, const UniValue& auth, bool fHelp) {
+}
+
 static const CAPICommand commands[] =
 { //  category              collection         actor (function)          authPort   authPassphrase   warmupOk
   //  --------------------- ------------       ----------------          -------- --------------   --------

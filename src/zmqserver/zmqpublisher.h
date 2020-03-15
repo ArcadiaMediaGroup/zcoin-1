@@ -84,6 +84,14 @@ public:
     bool NotifyStatus();
 };
 
+class CZMQUpdateAddressEvent : virtual public CZMQAbstractPublisher
+{
+    /* Updated blockchain sync status
+    */
+public:
+    bool UpdateAddressStatus(std::string label, std::string address, bool isDelete);
+};
+
 class CZMQAPIStatusEvent : virtual public CZMQAbstractPublisher
 {
     /* API Status notification
